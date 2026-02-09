@@ -23,10 +23,8 @@ jobs:
         with:
           token: ${{ github.token }}
           branch: main
-
-      - name: Skip if no version bump
-        if: steps.semver.outputs.next == ''
-        run: echo "No version bump needed" && exit 0
+          noVersionBumpBehavior: silent
+          noNewCommitBehavior: silent
 
       - name: Update plugin version in PHP
         if: steps.semver.outputs.next != ''
