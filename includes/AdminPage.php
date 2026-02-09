@@ -30,8 +30,8 @@ class AdminPage {
 	public function register_menu(): void {
 		// Register the main menu page.
 		add_menu_page(
-			'Manuel',
-			'Manuel',
+			"Manuel d'utilisation",
+			"Manuel d'utilisation",
 			'read',
 			'wcob-manual',
 			[$this, 'render_page'],
@@ -39,23 +39,17 @@ class AdminPage {
 			30
 		);
 
-		// Register hidden submenu for CPT management (only visible to users with manage_wcob_manual).
+		// Rename the first submenu item (auto-created by WP) to avoid duplication.
 		add_submenu_page(
 			'wcob-manual',
-			'Gérer les sections',
-			'Gérer les sections',
-			'manage_wcob_manual',
-			'edit.php?post_type=wcob_manual_section'
+			"Manuel d'utilisation",
+			'Consulter',
+			'read',
+			'wcob-manual',
+			[$this, 'render_page']
 		);
 
-		// Register hidden submenu to add new section.
-		add_submenu_page(
-			'wcob-manual',
-			'Ajouter une section',
-			'Ajouter une section',
-			'manage_wcob_manual',
-			'post-new.php?post_type=wcob_manual_section'
-		);
+		// CPT submenus are auto-registered via show_in_menu => 'wcob-manual' in CPT.php.
 	}
 
 	/**

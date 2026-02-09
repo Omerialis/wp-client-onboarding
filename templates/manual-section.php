@@ -20,7 +20,7 @@ $back_url = admin_url('admin.php?page=wcob-manual');
 <div class="wrap">
 	<div class="wcob-manual-section-header">
 		<a href="<?php echo esc_url($back_url); ?>" class="wcob-manual-back-link">
-			<?php esc_html_e('Back to Manuel', 'wp-client-onboarding'); ?>
+			&larr; <?php esc_html_e("Retour au manuel", 'wp-client-onboarding'); ?>
 		</a>
 	</div>
 
@@ -28,8 +28,11 @@ $back_url = admin_url('admin.php?page=wcob-manual');
 
 	<div class="wcob-manual-section-content">
 		<?php
-		// Display the content with WordPress filters applied (oEmbed support, etc.).
-		echo wp_kses_post(apply_filters('the_content', $section->post_content));
+		// Content is admin-managed (CPT), not user input.
+		// apply_filters('the_content') handles oEmbed (YouTube iframes, etc.).
+		// wp_kses_post would strip iframes, so we use the filtered output directly.
+		$content = apply_filters('the_content', $section->post_content);
+		echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		?>
 	</div>
 </div>
