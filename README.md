@@ -14,8 +14,8 @@ WordPress plugin that provides an embedded user manual in the admin dashboard fo
 
 ## Requirements
 
-- WordPress 6.0+
-- PHP 8.0+
+- WordPress 6.9+
+- PHP 8.2+
 
 ## Installation
 
