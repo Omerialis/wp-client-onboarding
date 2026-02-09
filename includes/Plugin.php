@@ -4,12 +4,11 @@
  *
  * @package WpClientOnboarding
  */
-
 declare(strict_types=1);
 
-defined('ABSPATH') || exit;
-
 namespace WpClientOnboarding;
+
+defined('ABSPATH') || exit;
 
 /**
  * Plugin class - main orchestrator.
@@ -26,5 +25,8 @@ class Plugin {
 	public function run(): void {
 		// Instantiate Capabilities to register capabilities handling.
 		new Capabilities();
+
+		// Instantiate CPT to register custom post type.
+		new CPT();
 	}
 }
