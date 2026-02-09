@@ -28,5 +28,11 @@ class Plugin {
 
 		// Instantiate CPT to register custom post type.
 		new CPT();
+
+		// Instantiate AdminPage to register admin menu and pages.
+		new AdminPage();
+
+		// Instantiate Assets to enqueue styles and scripts.
+		new Assets();
 	}
 }
