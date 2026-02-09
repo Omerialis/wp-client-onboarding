@@ -30,8 +30,8 @@ class AdminPage {
 	public function register_menu(): void {
 		// Register the main menu page.
 		add_menu_page(
-			"Manuel d'utilisation",
-			"Manuel d'utilisation",
+			__( 'User Manual', 'wp-client-onboarding' ),
+			__( 'User Manual', 'wp-client-onboarding' ),
 			'read',
 			'wcob-manual',
 			[$this, 'render_page'],
@@ -42,8 +42,8 @@ class AdminPage {
 		// Rename the first submenu item (auto-created by WP) to avoid duplication.
 		add_submenu_page(
 			'wcob-manual',
-			"Manuel d'utilisation",
-			'Consulter',
+			__( 'User Manual', 'wp-client-onboarding' ),
+			__( 'View', 'wp-client-onboarding' ),
 			'read',
 			'wcob-manual',
 			[$this, 'render_page']
@@ -54,8 +54,8 @@ class AdminPage {
 		// Register import submenu page.
 		add_submenu_page(
 			'wcob-manual',
-			'Importer les sections',
-			'Importer',
+			__( 'Import Sections', 'wp-client-onboarding' ),
+			__( 'Import', 'wp-client-onboarding' ),
 			'manage_wcob_manual',
 			'wcob-import',
 			[$this, 'render_import_page']

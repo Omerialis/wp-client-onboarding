@@ -67,6 +67,16 @@ class Assets {
 				WCOB_VERSION,
 				true
 			);
+
+			wp_localize_script(
+				'wcob-import',
+				'wcobImport',
+				[
+					'invalidFileMsg' => __( 'Please select a .json file.', 'wp-client-onboarding' ),
+					'noFileMsg'      => __( 'Please select a file to import.', 'wp-client-onboarding' ),
+					'importingMsg'   => __( 'Importing...', 'wp-client-onboarding' ),
+				]
+			);
 		}
 	}
 }

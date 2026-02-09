@@ -31,8 +31,8 @@ class CPT {
 	 */
 	public function register_cpt(): void {
 		$args = [
-			'label'              => 'Sections du manuel',
-			'description'        => 'Sections du manuel client',
+			'label'              => __( 'Manual Sections', 'wp-client-onboarding' ),
+			'description'        => __( 'Client manual sections', 'wp-client-onboarding' ),
 			'public'             => false,
 			'show_ui'            => true,
 			'show_in_menu'       => 'wcob-manual',
@@ -44,17 +44,17 @@ class CPT {
 			'menu_position'      => null,
 			'map_meta_cap'       => true,
 			'labels'             => [
-				'name'                  => 'Sections du manuel',
-				'singular_name'         => 'Section du manuel',
-				'all_items'             => 'Toutes les sections',
-				'add_new'               => 'Ajouter une nouvelle section',
-				'add_new_item'          => 'Ajouter une nouvelle section du manuel',
-				'edit_item'             => 'Modifier la section',
-				'new_item'              => 'Nouvelle section',
-				'view_item'             => 'Afficher la section',
-				'search_items'          => 'Rechercher les sections',
-				'not_found'             => 'Aucune section trouvée',
-				'not_found_in_trash'    => 'Aucune section trouvée dans la corbeille',
+				'name'                  => __( 'Manual Sections', 'wp-client-onboarding' ),
+				'singular_name'         => __( 'Manual Section', 'wp-client-onboarding' ),
+				'all_items'             => __( 'All Sections', 'wp-client-onboarding' ),
+				'add_new'               => __( 'Add New Section', 'wp-client-onboarding' ),
+				'add_new_item'          => __( 'Add New Manual Section', 'wp-client-onboarding' ),
+				'edit_item'             => __( 'Edit Section', 'wp-client-onboarding' ),
+				'new_item'              => __( 'New Section', 'wp-client-onboarding' ),
+				'view_item'             => __( 'View Section', 'wp-client-onboarding' ),
+				'search_items'          => __( 'Search Sections', 'wp-client-onboarding' ),
+				'not_found'             => __( 'No sections found', 'wp-client-onboarding' ),
+				'not_found_in_trash'    => __( 'No sections found in Trash', 'wp-client-onboarding' ),
 			],
 		];
 
@@ -94,7 +94,7 @@ class CPT {
 			}
 		}
 
-		$new_columns['menu_order'] = 'Ordre';
+		$new_columns['menu_order'] = __( 'Order', 'wp-client-onboarding' );
 		$new_columns['date']        = $columns['date'] ?? 'Date';
 
 		return $new_columns;

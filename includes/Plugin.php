@@ -23,6 +23,9 @@ class Plugin {
 	 * @return void
 	 */
 	public function run(): void {
+		// Load plugin text domain for i18n.
+		add_action( 'init', [ $this, 'load_textdomain' ] );
+
 		// Instantiate Capabilities to register capabilities handling.
 		new Capabilities();
 
@@ -37,5 +40,18 @@ class Plugin {
 
 		// Instantiate Importer to handle JSON import.
 		new Importer();
+	}
+
+	/**
+	 * Load the plugin text domain for translations.
+	 *
+	 * @return void
+	 */
+	public function load_textdomain(): void {
+		load_plugin_textdomain(
+			'wp-client-onboarding',
+			false,
+			dirname( plugin_basename( WCOB_PLUGIN_FILE ) ) . '/languages'
+		);
 	}
 }

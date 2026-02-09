@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (!file.name.toLowerCase().endsWith('.json')) {
 				this.value = '';
 				fileInfo.style.display = 'none';
-				alert('Please select a .json file.');
+				alert(wcobImport.invalidFileMsg);
 				return;
 			}
 
@@ -39,12 +39,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	form.addEventListener('submit', function (e) {
 		if (!fileInput.files || !fileInput.files[0]) {
 			e.preventDefault();
-			alert('Please select a file to import.');
+			alert(wcobImport.noFileMsg);
 			return;
 		}
 
 		// Disable submit button to prevent double submission.
 		submitButton.disabled = true;
-		submitButton.textContent = submitButton.textContent.replace(/Import.*/, 'Importing...');
+		submitButton.textContent = wcobImport.importingMsg;
 	});
 });
