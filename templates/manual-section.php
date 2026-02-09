@@ -20,7 +20,7 @@ $back_url = admin_url('admin.php?page=wcob-manual');
 <div class="wrap">
 	<div class="wcob-manual-section-header">
 		<a href="<?php echo esc_url($back_url); ?>" class="wcob-manual-back-link">
-			&larr; <?php esc_html_e("Retour au manuel", 'wp-client-onboarding'); ?>
+			&larr; <?php esc_html_e( 'Back to manual', 'wp-client-onboarding' ); ?>
 		</a>
 	</div>
 

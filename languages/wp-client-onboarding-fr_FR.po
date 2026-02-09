@@ -1,0 +1,274 @@
+# French translations for WP Client Onboarding plugin.
+# Copyright (C) 2026 Omerialis
+# This file is distributed under the GPLv2.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Client Onboarding 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-client-onboarding\n"
+"Last-Translator: Omerialis\n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-09T12:36:02+00:00\n"
+"PO-Revision-Date: 2026-02-09 12:36+0000\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wp-client-onboarding\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. Plugin Name of the plugin
+#: wp-client-onboarding.php
+msgid "WP Client Onboarding"
+msgstr "WP Client Onboarding"
+
+#. Description of the plugin
+#: wp-client-onboarding.php
+msgid "Embedded user manual for client onboarding"
+msgstr "Manuel utilisateur intégré pour l'onboarding client"
+
+#. Author of the plugin
+#: wp-client-onboarding.php
+msgid "Omerialis"
+msgstr "Omerialis"
+
+#: includes/AdminPage.php:33
+#: includes/AdminPage.php:34
+#: includes/AdminPage.php:45
+#: templates/manual-list.php:20
+msgid "User Manual"
+msgstr "Manuel d'utilisation"
+
+#: includes/AdminPage.php:46
+msgid "View"
+msgstr "Consulter"
+
+#: includes/AdminPage.php:57
+#: templates/import-page.php:50
+msgid "Import Sections"
+msgstr "Importer les sections"
+
+#: includes/AdminPage.php:58
+msgid "Import"
+msgstr "Importer"
+
+#: includes/Assets.php:75
+msgid "Please select a .json file."
+msgstr "Veuillez sélectionner un fichier .json."
+
+#: includes/Assets.php:76
+msgid "Please select a file to import."
+msgstr "Veuillez sélectionner un fichier à importer."
+
+#: includes/CPT.php:34
+#: includes/CPT.php:47
+msgid "Manual Sections"
+msgstr "Sections du manuel"
+
+#: includes/CPT.php:35
+msgid "Client manual sections"
+msgstr "Sections du manuel client"
+
+#: includes/CPT.php:48
+msgid "Manual Section"
+msgstr "Section du manuel"
+
+#: includes/CPT.php:49
+msgid "All Sections"
+msgstr "Toutes les sections"
+
+#: includes/CPT.php:50
+msgid "Add New Section"
+msgstr "Ajouter une nouvelle section"
+
+#: includes/CPT.php:51
+msgid "Add New Manual Section"
+msgstr "Ajouter une nouvelle section du manuel"
+
+#: includes/CPT.php:52
+msgid "Edit Section"
+msgstr "Modifier la section"
+
+#: includes/CPT.php:53
+msgid "New Section"
+msgstr "Nouvelle section"
+
+#: includes/CPT.php:54
+msgid "View Section"
+msgstr "Afficher la section"
+
+#: includes/CPT.php:55
+msgid "Search Sections"
+msgstr "Rechercher les sections"
+
+#: includes/CPT.php:56
+msgid "No sections found"
+msgstr "Aucune section trouvée"
+
+#: includes/CPT.php:57
+msgid "No sections found in Trash"
+msgstr "Aucune section trouvée dans la corbeille"
+
+#: includes/CPT.php:97
+msgid "Order"
+msgstr "Ordre"
+
+#: includes/Importer.php:36
+msgid "Nonce verification failed."
+msgstr "La vérification du nonce a échoué."
+
+#: includes/Importer.php:41
+msgid "Insufficient permissions."
+msgstr "Permissions insuffisantes."
+
+#: includes/Importer.php:46
+msgid "No file uploaded."
+msgstr "Aucun fichier envoyé."
+
+#: includes/Importer.php:56
+msgid "File must have a .json extension."
+msgstr "Le fichier doit avoir une extension .json."
+
+#: includes/Importer.php:65
+msgid "Invalid file type. Please upload a JSON file."
+msgstr "Type de fichier invalide. Veuillez envoyer un fichier JSON."
+
+#: includes/Importer.php:73
+msgid "Unable to read uploaded file."
+msgstr "Impossible de lire le fichier envoyé."
+
+#: includes/Importer.php:80
+msgid "Failed to read file contents."
+msgstr "Échec de la lecture du contenu du fichier."
+
+#: includes/Importer.php:89
+msgid "Invalid JSON format: "
+msgstr "Format JSON invalide : "
+
+#: includes/Importer.php:95
+msgid "JSON must contain an array of objects."
+msgstr "Le JSON doit contenir un tableau d'objets."
+
+#. translators: %d is the entry index
+#: includes/Importer.php:109
+#, php-format
+msgid "Entry %d is not an object."
+msgstr "L'entrée %d n'est pas un objet."
+
+#. translators: %d is the entry index
+#: includes/Importer.php:119
+#, php-format
+msgid "Entry %d missing required field \"title\"."
+msgstr "L'entrée %d n'a pas le champ requis « title »."
+
+#. translators: %d is the entry index
+#: includes/Importer.php:128
+#, php-format
+msgid "Entry %d missing required field \"content\"."
+msgstr "L'entrée %d n'a pas le champ requis « content »."
+
+#. translators: %d is the entry index
+#: includes/Importer.php:140
+#, php-format
+msgid "Entry %d has invalid \"order\" field (must be integer)."
+msgstr "L'entrée %d a un champ « order » invalide (doit être un entier)."
+
+#. translators: %d is the entry index, %s is the error message
+#: includes/Importer.php:160
+#, php-format
+msgid "Entry %d failed to import: %s"
+msgstr "Échec de l'import de l'entrée %d : %s"
+
+#. translators: %d is the number of imported entries
+#: includes/Importer.php:174
+#, php-format
+msgid "Successfully imported %d section(s)."
+msgstr "%d section(s) importée(s) avec succès."
+
+#: includes/Importer.php:179
+msgid "Some entries had errors:"
+msgstr "Certaines entrées comportent des erreurs :"
+
+#: includes/Importer.php:184
+msgid "No entries were imported."
+msgstr "Aucune entrée n'a été importée."
+
+#: includes/Importer.php:186
+msgid "Errors:"
+msgstr "Erreurs :"
+
+#: templates/import-page.php:14
+msgid "Import Manual Sections"
+msgstr "Importer les sections du manuel"
+
+#: templates/import-page.php:23
+msgid "Upload JSON File"
+msgstr "Envoyer un fichier JSON"
+
+#: templates/import-page.php:24
+msgid "Upload a JSON file containing manual sections to import them into the system."
+msgstr "Envoyez un fichier JSON contenant les sections du manuel pour les importer dans le système."
+
+#: templates/import-page.php:34
+msgid "JSON File"
+msgstr "Fichier JSON"
+
+#: templates/import-page.php:40
+msgid "Select a .json file to import."
+msgstr "Sélectionnez un fichier .json à importer."
+
+#: templates/import-page.php:43
+msgid "Selected file:"
+msgstr "Fichier sélectionné :"
+
+#: templates/import-page.php:55
+msgid "JSON Format"
+msgstr "Format JSON"
+
+#: templates/import-page.php:56
+msgid "Your JSON file should be an array of objects with the following structure:"
+msgstr "Votre fichier JSON doit être un tableau d'objets avec la structure suivante :"
+
+#: templates/import-page.php:78
+msgid "Field Descriptions"
+msgstr "Description des champs"
+
+#: templates/import-page.php:81
+msgid "title"
+msgstr "title"
+
+#: templates/import-page.php:82
+msgid "(required, string) - Section title"
+msgstr "(requis, chaîne) - Titre de la section"
+
+#: templates/import-page.php:85
+msgid "content"
+msgstr "content"
+
+#: templates/import-page.php:86
+msgid "(required, string) - Section content (HTML allowed)"
+msgstr "(requis, chaîne) - Contenu de la section (HTML autorisé)"
+
+#: templates/import-page.php:89
+msgid "order"
+msgstr "order"
+
+#: templates/import-page.php:90
+msgid "(optional, integer) - Section display order"
+msgstr "(optionnel, entier) - Ordre d'affichage de la section"
+
+#: includes/Assets.php:77
+msgid "Importing..."
+msgstr "Importation en cours..."
+
+#: templates/manual-list.php:49
+msgid "No sections found."
+msgstr "Aucune section trouvée."
+
+#: templates/manual-section.php:14
+msgid "Section not found."
+msgstr "Section introuvable."
+
+#: templates/manual-section.php:23
+msgid "Back to manual"
+msgstr "Retour au manuel"
