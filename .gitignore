@@ -15,6 +15,9 @@ Thumbs.db
 # Worktrees
 worktrees/
 
+# Dev environment
+dev/
+
 # AIDD tooling
 aidd*
 aidd/
