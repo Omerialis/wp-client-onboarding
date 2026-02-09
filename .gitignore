@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Worktrees
+worktrees/
+
+# AIDD tooling
+aidd*
+aidd/
+docs/
+.claude
+.opencode
