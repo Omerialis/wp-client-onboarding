@@ -50,6 +50,16 @@ class AdminPage {
 		);
 
 		// CPT submenus are auto-registered via show_in_menu => 'wcob-manual' in CPT.php.
+
+		// Register import submenu page.
+		add_submenu_page(
+			'wcob-manual',
+			'Importer les sections',
+			'Importer',
+			'manage_wcob_manual',
+			'wcob-import',
+			[$this, 'render_import_page']
+		);
 	}
 
 	/**
@@ -99,6 +109,18 @@ class AdminPage {
 	 */
 	private function render_section(int $section_id): void {
 		$template_file = WCOB_PLUGIN_DIR . 'templates/manual-section.php';
+		if (file_exists($template_file)) {
+			include $template_file;
+		}
+	}
+
+	/**
+	 * Render the import page template.
+	 *
+	 * @return void
+	 */
+	public function render_import_page(): void {
+		$template_file = WCOB_PLUGIN_DIR . 'templates/import-page.php';
 		if (file_exists($template_file)) {
 			include $template_file;
 		}

@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Getting Started",
+    "content": "<h2>Welcome to Our Platform</h2>\n<p>This manual will guide you through all the features and functionality of our client onboarding system. Whether you're new to our platform or looking to refresh your knowledge, you'll find everything you need here.</p>\n<h3>Quick Overview</h3>\n<p>Our platform is designed to streamline your workflow and improve productivity. We've organized this manual into clear sections that cover:</p>\n<ul>\n<li>Account setup and navigation</li>\n<li>Content management basics</li>\n<li>Advanced features and integrations</li>\n</ul>\n<p><img src=\"https://via.placeholder.com/600x300?text=Getting+Started\" alt=\"Getting Started\" style=\"max-width:100%;height:auto;\" /></p>",
+    "order": 0
+  },
+  {
+    "title": "Managing Content",
+    "content": "<h2>Content Management Guide</h2>\n<p>Learn how to effectively manage and organize your content within the system.</p>\n<h3>Creating New Sections</h3>\n<p>To create a new section, follow these steps:</p>\n<ol>\n<li>Navigate to the \"Gérer les sections\" menu</li>\n<li>Click \"Ajouter une section\" button</li>\n<li>Fill in the section title and content</li>\n<li>Set the display order using the menu_order field</li>\n<li>Click \"Publish\" to save</li>\n</ol>\n<h3>Editing Sections</h3>\n<p>You can edit any existing section by clicking on it in the management list. All changes are saved immediately when you update the post.</p>\n<h3>Best Practices</h3>\n<ul>\n<li>Use clear, descriptive titles</li>\n<li>Break content into logical paragraphs</li>\n<li>Include relevant images and examples</li>\n<li>Keep sections focused on a single topic</li>\n</ul>",
+    "order": 1
+  },
+  {
+    "title": "Media & Videos",
+    "content": "<h2>Adding Media to Your Sections</h2>\n<p>Enhance your manual sections with images, videos, and embedded content.</p>\n<h3>Embedding Videos</h3>\n<p>You can embed videos directly into your sections using the WordPress embed shortcode:</p>\n<pre><code>[embed]https://www.youtube.com/watch?v=dQw4w9WgXcQ[/embed]</code></pre>\n<h3>Adding Images</h3>\n<p>Use standard HTML image tags to add images to your content:</p>\n<pre><code>&lt;img src=\"https://your-domain.com/image.jpg\" alt=\"Description\" style=\"max-width:100%;height:auto;\" /&gt;</code></pre>\n<h3>Supported Media Types</h3>\n<ul>\n<li>YouTube videos</li>\n<li>Vimeo videos</li>\n<li>Images (JPG, PNG, GIF, WebP)</li>\n<li>Custom HTML embeds</li>\n</ul>\n<p><img src=\"https://via.placeholder.com/600x300?text=Media+Support\" alt=\"Media Support\" style=\"max-width:100%;height:auto;\" /></p>",
+    "order": 2
+  }
+]
