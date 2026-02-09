@@ -56,6 +56,16 @@ class AdminPage {
 			'manage_wcob_manual',
 			'post-new.php?post_type=wcob_manual_section'
 		);
+
+		// Register import submenu page (only visible to users with manage_wcob_manual).
+		add_submenu_page(
+			'wcob-manual',
+			'Importer les sections',
+			'Importer les sections',
+			'manage_wcob_manual',
+			'wcob-import',
+			[$this, 'render_import_page']
+		);
 	}
 
 	/**
@@ -105,6 +115,18 @@ class AdminPage {
 	 */
 	private function render_section(int $section_id): void {
 		$template_file = WCOB_PLUGIN_DIR . 'templates/manual-section.php';
+		if (file_exists($template_file)) {
+			include $template_file;
+		}
+	}
+
+	/**
+	 * Render the import page template.
+	 *
+	 * @return void
+	 */
+	public function render_import_page(): void {
+		$template_file = WCOB_PLUGIN_DIR . 'templates/import-page.php';
 		if (file_exists($template_file)) {
 			include $template_file;
 		}
