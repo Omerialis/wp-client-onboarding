@@ -17,7 +17,7 @@ $args = [
 $sections = new WP_Query($args);
 ?>
 <div class="wrap">
-	<h1><?php esc_html_e('Manuel', 'wp-client-onboarding'); ?></h1>
+	<h1><?php esc_html_e("Manuel d'utilisation", 'wp-client-onboarding'); ?></h1>
 
 	<?php if ($sections->have_posts()) : ?>
 		<div class="wcob-manual-list">
