@@ -2,8 +2,8 @@ name: Release
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -14,15 +14,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Get version from tag
-        id: version
-        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> "$GITHUB_OUTPUT"
+      - name: Determine next version
+        id: semver
+        uses: ietf-tools/semver-action@v1
+        with:
+          token: ${{ github.token }}
+          branch: main
+
+      - name: Skip if no version bump
+        if: steps.semver.outputs.next == ''
+        run: echo "No version bump needed" && exit 0
+
+      - name: Update plugin version in PHP
+        if: steps.semver.outputs.next != ''
+        run: |
+          VERSION="${{ steps.semver.outputs.next }}"
+          VERSION_CLEAN="${VERSION#v}"
+          sed -i "s/Version: .*/Version: ${VERSION_CLEAN}/" wp-client-onboarding.php
+          sed -i "s/define('WCOB_VERSION', '.*')/define('WCOB_VERSION', '${VERSION_CLEAN}')/" wp-client-onboarding.php
 
       - name: Build plugin zip
+        if: steps.semver.outputs.next != ''
         run: |
+          VERSION="${{ steps.semver.outputs.next }}"
+          VERSION_CLEAN="${VERSION#v}"
           mkdir -p /tmp/wp-client-onboarding
-          rsync -av \
+          rsync -a \
             --exclude='.git' \
             --exclude='.github' \
             --exclude='.gitignore' \
@@ -40,10 +60,13 @@ jobs:
             --exclude='.mcp.json' \
             . /tmp/wp-client-onboarding/
           cd /tmp
-          zip -r wp-client-onboarding-${{ steps.version.outputs.VERSION }}.zip wp-client-onboarding/
+          zip -r wp-client-onboarding-${VERSION_CLEAN}.zip wp-client-onboarding/
 
-      - name: Create GitHub Release
+      - name: Create tag and GitHub Release
+        if: steps.semver.outputs.next != ''
         uses: softprops/action-gh-release@v2
         with:
-          files: /tmp/wp-client-onboarding-${{ steps.version.outputs.VERSION }}.zip
+          tag_name: ${{ steps.semver.outputs.next }}
+          name: ${{ steps.semver.outputs.next }}
+          files: /tmp/wp-client-onboarding-*.zip
           generate_release_notes: true
