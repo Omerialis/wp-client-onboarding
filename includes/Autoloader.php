@@ -4,12 +4,11 @@
  *
  * @package WpClientOnboarding
  */
-
 declare(strict_types=1);
 
-defined('ABSPATH') || exit;
-
 namespace WpClientOnboarding;
+
+defined('ABSPATH') || exit;
 
 /**
  * PSR-4 Autoloader class.
