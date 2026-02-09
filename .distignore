@@ -1,0 +1,15 @@
+.git
+.github
+.gitignore
+.distignore
+.claude
+.opencode
+.mcp.json
+node_modules
+vendor
+docs
+aidd
+worktrees
+dev
+AGENTS.md
+CONTRIBUTING.md

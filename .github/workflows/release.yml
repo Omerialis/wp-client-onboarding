@@ -1,0 +1,49 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> "$GITHUB_OUTPUT"
+
+      - name: Build plugin zip
+        run: |
+          mkdir -p /tmp/wp-client-onboarding
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.gitignore' \
+            --exclude='.distignore' \
+            --exclude='node_modules' \
+            --exclude='vendor' \
+            --exclude='docs' \
+            --exclude='aidd' \
+            --exclude='worktrees' \
+            --exclude='dev' \
+            --exclude='.claude' \
+            --exclude='.opencode' \
+            --exclude='AGENTS.md' \
+            --exclude='CONTRIBUTING.md' \
+            --exclude='.mcp.json' \
+            . /tmp/wp-client-onboarding/
+          cd /tmp
+          zip -r wp-client-onboarding-${{ steps.version.outputs.VERSION }}.zip wp-client-onboarding/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: /tmp/wp-client-onboarding-${{ steps.version.outputs.VERSION }}.zip
+          generate_release_notes: true
