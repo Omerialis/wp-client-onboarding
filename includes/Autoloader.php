@@ -40,7 +40,7 @@ class Autoloader {
 		}
 
 		// Remove the namespace prefix.
-		$relative_class = substr($class, strlen(__NAMESPACE__) . 1);
+		$relative_class = substr($class, strlen(__NAMESPACE__) + 1);
 
 		// Convert namespace separators to file path separators.
 		$file = WCOB_PLUGIN_DIR . 'includes/' . str_replace('\\', '/', $relative_class) . '.php';
