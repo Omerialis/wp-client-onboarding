@@ -34,5 +34,8 @@ class Plugin {
 
 		// Instantiate Assets to enqueue styles and scripts.
 		new Assets();
+
+		// Instantiate Importer to handle JSON import.
+		new Importer();
 	}
 }

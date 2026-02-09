@@ -29,35 +29,44 @@ class Assets {
 	 * @return void
 	 */
 	public function enqueue_manual_assets(string $hook_suffix): void {
-		// Only enqueue on the manual page.
-		if ('toplevel_page_wcob-manual' !== $hook_suffix) {
-			return;
+		// Enqueue on the manual page.
+		if ('toplevel_page_wcob-manual' === $hook_suffix) {
+			// Enqueue CSS.
+			wp_enqueue_style(
+				'wcob-manual',
+				WCOB_PLUGIN_URL . 'assets/css/manual.css',
+				[],
+				WCOB_VERSION
+			);
+
+			// Enqueue JavaScript.
+			wp_enqueue_script(
+				'wcob-manual',
+				WCOB_PLUGIN_URL . 'assets/js/manual.js',
+				[],
+				WCOB_VERSION,
+				true
+			);
+
+			// Localize script with data if needed.
+			wp_localize_script(
+				'wcob-manual',
+				'wcobManual',
+				[
+					'ajaxUrl' => admin_url('admin-ajax.php'),
+				]
+			);
 		}
 
-		// Enqueue CSS.
-		wp_enqueue_style(
-			'wcob-manual',
-			WCOB_PLUGIN_URL . 'assets/css/manual.css',
-			[],
-			WCOB_VERSION
-		);
-
-		// Enqueue JavaScript.
-		wp_enqueue_script(
-			'wcob-manual',
-			WCOB_PLUGIN_URL . 'assets/js/manual.js',
-			[],
-			WCOB_VERSION,
-			true
-		);
-
-		// Localize script with data if needed.
-		wp_localize_script(
-			'wcob-manual',
-			'wcobManual',
-			[
-				'ajaxUrl' => admin_url('admin-ajax.php'),
-			]
-		);
+		// Enqueue on the import page.
+		if ('manuel_page_wcob-import' === $hook_suffix) {
+			wp_enqueue_script(
+				'wcob-import',
+				WCOB_PLUGIN_URL . 'assets/js/import.js',
+				[],
+				WCOB_VERSION,
+				true
+			);
+		}
 	}
 }
