@@ -35,7 +35,7 @@ class CPT {
 			'description'        => 'Sections du manuel client',
 			'public'             => false,
 			'show_ui'            => true,
-			'show_in_menu'       => false,
+			'show_in_menu'       => 'wcob-manual',
 			'show_in_rest'       => false,
 			'supports'           => ['title', 'editor', 'page-attributes'],
 			'capability_type'    => 'post',
