@@ -145,11 +145,18 @@ class Importer {
 				$order = $entry['order'];
 			}
 
+			// Validate optional excerpt field.
+			$excerpt = '';
+			if (isset($entry['excerpt']) && is_string($entry['excerpt'])) {
+				$excerpt = sanitize_text_field($entry['excerpt']);
+			}
+
 			// Create the post.
 			$post_id = wp_insert_post([
 				'post_type'    => 'wcob_manual_section',
 				'post_title'   => wp_kses_post($entry['title']),
 				'post_content' => wp_kses_post($entry['content']),
+				'post_excerpt' => $excerpt,
 				'post_status'  => 'publish',
 				'menu_order'   => $order,
 			], true);

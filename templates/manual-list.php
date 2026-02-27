@@ -26,7 +26,7 @@ $sections = new WP_Query($args);
 				$sections->the_post();
 				$section_id   = get_the_ID();
 				$section_url  = add_query_arg('section', $section_id, admin_url('admin.php?page=wcob-manual'));
-				$excerpt      = has_excerpt() ? get_the_excerpt() : wp_trim_words(get_the_content(), 20);
+				$excerpt      = has_excerpt() ? get_the_excerpt() : wp_trim_words(strip_shortcodes(get_the_content()), 20);
 				?>
 				<div class="wcob-manual-section-item">
 					<h2>
